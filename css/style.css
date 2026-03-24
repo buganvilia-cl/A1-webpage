@@ -1,8 +1,10 @@
-body {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 110%; background-color:#e3f4fa; 
-
+:root {
     --logo-size:max(3em, min(25vh, 25vw )) ;
+}
+
+body {
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 110%; background-color:#e3f4fa; 
     max-width:1200px;
     margin:auto;
 }
@@ -25,117 +27,89 @@ header {
     grid-template-columns: calc(var(--logo-size) + 5%)  calc(95% - var(--logo-size)) ;
     align-items:center;
 }    
-
 header img{
     width:var(--logo-size);
     height:var(--logo-size);
-    margin:5% 5% 5% 10%;
+    margin:calc(var(--logo-size)/10) 5% 5% calc(var(--logo-size)/10);
     padding:0;
     border-radius: 50%;
     z-index: 10;
-
 }
 #lema {
     width:100%;
     text-align: center;
     font-size: max(7vw, 200%);
-    font-family: 'Brush Script MT';
+    font-family: 'Brush Script MT', cursive;
     color:  rgb(234, 186, 255);
-    margin-right: 10%;
-
-    
+    margin-right: 10%;    
 }
 nav{ 
     background-color: darkorchid;
     grid-column: span 2;
-    margin:0
-
+    margin:0;
 }
 nav a {text-decoration: none;   
-    color:#e3f4fa;   
+    color:#e3f4fa;  
+    font-size: 110%; 
 }
-
 nav ul{
     vertical-align: middle;
     display:flex;
     flex-wrap: wrap;
     padding-inline-start: 0;
-    margin:0;
-
-
-   
+    margin:0;   
 }
 nav li { 
      text-align:center ;
      vertical-align: middle;
     display: inline-block;
-    padding: 1% ;
+    padding: 0.2rem;
     flex-grow: 1;
-    border-style:double;
-    border-width: 4px;
-    color:#bca5fc;  
+    border:double 3px darkorchid;          
 }
-    
-
-
 .current {
-    background-color: darkviolet;
-    border-style: inset;
-    border-width: 4px;
-    color:#bca5fc; 
+    background-color: #cb83ea;
+    border: inset 3px #bca5fc; 
 }
 
-/* Header different sizes */
+/* ---- Header different sizes ---- */
 
 @media screen and (min-width:500px){
-#lema {
+    #lema {
      font-size: min(8vw, 400%) ;
-    
+    }
 }
-}
-
-
 @media screen and (min-width:650px){
-
-nav ul{
-    padding-left:calc(var(--logo-size) + 2%);
-    /*position:relative;  top: -2rem;*/
-
-}  
-header{
-     grid-template-rows: max(var(--logo-size), 4rem)  auto; 
+    nav ul{
+        padding-left:calc(var(--logo-size) + 2%);
+    } 
+    nav li { 
+        padding: 0.3rem;
+    }
+    header{
+        grid-template-rows: max(var(--logo-size), 4rem)  auto; 
+    }
+    header img{
+        position: relative; top:calc(var(--logo-size)/10);
+    }
 }
-header img{
-    position: relative; top:2vw;
-
-}
-}
 
 
-/*  Main  */
+/*  --  Main --  */
 
 main{
     font-size: 100%; 
 }
-
-
 h1 {
     color: darkviolet;
-    font-family: cursive;
+    font-family: 'Brush Script MT', cursive;
     text-align: center;
+    font-size: 3em;
 }
-
-#A1 {font-family: 'Brush Script MT';
-     font-size: 300%
-}
-
 h2 {margin:3% 10%;
     color:darkviolet;
-    font-family: cursive;
 }
-
 h3 {margin:2% 6%;
-    font-family: cursive;
 }
 
 p { margin: 1% 4%;
@@ -146,7 +120,6 @@ a {
     color:indigo;
 }
 
-
 img{ 
     display: block;
     width:84%;
@@ -156,15 +129,14 @@ img{
     padding: min(3%, 1rem);
     margin: auto;
     background-color:white;
-    border-radius: 3%;     
-    
+    border-radius: 3%;      
 } 
 
 .imgList{
     margin:auto;
 }
 
-/*Páginas de proceso creativo*/
+/*--Páginas de proceso creativo--*/
 
 .imgList{
     display:flex;
@@ -184,12 +156,11 @@ img{
      padding: .3em;
 }
 
-
 .lightbox .lb-image {
     padding: 0em;
 }
 
-/*Homepage*/
+/*--Homepage--*/
 
 .trabajos{
     display:block; 
@@ -203,34 +174,26 @@ img{
      text-align: center;            
 }
 
-
 .trabajos img{
     height: 200px;
 }
 
-
 footer {
     background-color: rgb(19, 101, 121, 0.2);
     font-size: 80%;
-    padding: 1%;
-   
+    padding: 1%;  
 }
-
 
 /* main diferent sizes */
 
 @media screen and (min-width:600px){
-.img_media{
-    
+.img_media{  
     width:40%;
    display:inline-block;
- 
 }
-.img_tercio{
-   
+.img_tercio{ 
     width:39%;
-  display:inline-block;
-     
+  display:inline-block;   
 }
 }
 
